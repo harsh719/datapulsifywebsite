@@ -36,14 +36,14 @@ const features = [
 
 const FeaturesSection = () => {
   return (
-    <section id="features" className="gradient-bg py-20 md:py-32">
+    <section id="features" className="gradient-bg py-14 md:py-20 lg:py-28">
       <div className="container-section">
         <h2 className="section-title">Powerful Features</h2>
         <p className="section-subtitle">
           Everything you need to leverage Google Search Console data in your spreadsheets.
         </p>
 
-        <div className="grid md:grid-cols-2 gap-8 mt-12">
+        <div className="grid sm:grid-cols-2 gap-6 md:gap-8 mt-8 md:mt-12">
           {features.map((feature, index) => (
             <div 
               key={feature.title} 
@@ -51,12 +51,12 @@ const FeaturesSection = () => {
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <div className="flex flex-col h-full">
-                <div className="mb-6 p-3 bg-black/50 rounded-lg w-fit">
-                  <feature.icon size={28} className="text-white" />
+                <div className="mb-4 md:mb-6 p-2 md:p-3 bg-black/50 rounded-lg w-fit">
+                  <feature.icon size={24} className="text-white" />
                 </div>
                 
-                <div className="flex items-center gap-3 mb-3">
-                  <h3 className="text-xl font-semibold">{feature.title}</h3>
+                <div className="flex items-center flex-wrap gap-2 mb-2 md:mb-3">
+                  <h3 className="text-lg md:text-xl font-semibold">{feature.title}</h3>
                   {feature.comingSoon && (
                     <span className="text-xs py-0.5 px-2 bg-white/10 rounded-full text-gray-300">
                       Coming Soon
@@ -64,7 +64,7 @@ const FeaturesSection = () => {
                   )}
                 </div>
                 
-                <p className="text-gray-300">{feature.description}</p>
+                <p className="text-sm md:text-base text-gray-300">{feature.description}</p>
               </div>
             </div>
           ))}
