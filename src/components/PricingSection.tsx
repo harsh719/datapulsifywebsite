@@ -5,7 +5,7 @@ import { Check, Info, MessageCircle } from 'lucide-react';
 
 const PricingSection = () => {
   return (
-    <section id="pricing" className="gradient-bg py-20 md:py-32">
+    <section id="pricing" className="gradient-bg py-20 md:py-28">
       <div className="container-section">
         <h2 className="section-title">Simple, Transparent Pricing</h2>
         <p className="section-subtitle">
@@ -65,13 +65,13 @@ const PricingSection = () => {
                 <span className="text-3xl font-bold">$0</span>
                 <span className="text-gray-400 ml-2">/month</span>
               </div>
-              <p className="text-sm text-gray-300">Limited queries, basic features</p>
+              <p className="text-sm text-gray-300">Limited rows, basic features</p>
             </div>
             <div className="p-6">
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start">
                   <Check size={18} className="mr-2 mt-0.5 text-white" />
-                  <span>5 queries per day</span>
+                  <span>Up to 10,000 rows</span>
                 </li>
                 <li className="flex items-start">
                   <Check size={18} className="mr-2 mt-0.5 text-white" />
@@ -102,13 +102,13 @@ const PricingSection = () => {
                 <span className="text-3xl font-bold">$9</span>
                 <span className="text-gray-400 ml-2">/month</span>
               </div>
-              <p className="text-sm text-gray-300">Unlimited queries & all features</p>
+              <p className="text-sm text-gray-300">Unlimited rows & all features</p>
             </div>
             <div className="p-6">
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start">
                   <Check size={18} className="mr-2 mt-0.5 text-white" />
-                  <span>Unlimited queries</span>
+                  <span>Unlimited rows</span>
                 </li>
                 <li className="flex items-start">
                   <Check size={18} className="mr-2 mt-0.5 text-white" />

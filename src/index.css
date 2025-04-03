@@ -61,7 +61,7 @@
   }
   
   .container-section {
-    @apply container mx-auto px-4 md:px-8 max-w-6xl py-16 md:py-24;
+    @apply container mx-auto px-4 md:px-8 max-w-6xl py-12 md:py-16;
   }
   
   .section-title {
