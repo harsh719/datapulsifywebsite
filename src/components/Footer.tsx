@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Twitter, Linkedin, Youtube, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
@@ -31,10 +32,10 @@ const Footer = () => {
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">Product</h3>
             <ul className="space-y-2">
-              <li><a href="#features" className="text-gray-400 hover:text-white transition-colors">Features</a></li>
-              <li><a href="#pricing" className="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+              <li><a href="/#features" className="text-gray-400 hover:text-white transition-colors">Features</a></li>
+              <li><a href="/#pricing" className="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Roadmap</a></li>
-              <li><a href="#faq" className="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
+              <li><a href="/#faq" className="text-gray-400 hover:text-white transition-colors">FAQ</a></li>
             </ul>
           </div>
           
@@ -52,7 +53,7 @@ const Footer = () => {
             <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">Company</h3>
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+              <li><Link to="/waitlist" className="text-gray-400 hover:text-white transition-colors">Join Waitlist</Link></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
             </ul>

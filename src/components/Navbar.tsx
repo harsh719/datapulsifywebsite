@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 
@@ -30,26 +31,26 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex justify-between items-center">
-          <a href="#" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <span className="text-white text-xl font-bold">Datapulsify</span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-10">
-            <a href="#features" className="text-gray-300 hover:text-white transition-colors">Features</a>
-            <a href="#how-it-works" className="text-gray-300 hover:text-white transition-colors">How It Works</a>
-            <a href="#pricing" className="text-gray-300 hover:text-white transition-colors">Pricing</a>
-            <a href="#community" className="text-gray-300 hover:text-white transition-colors">Community</a>
-            <a href="#faq" className="text-gray-300 hover:text-white transition-colors">FAQ</a>
+            <a href="/#features" className="text-gray-300 hover:text-white transition-colors">Features</a>
+            <a href="/#how-it-works" className="text-gray-300 hover:text-white transition-colors">How It Works</a>
+            <a href="/#pricing" className="text-gray-300 hover:text-white transition-colors">Pricing</a>
+            <a href="/#community" className="text-gray-300 hover:text-white transition-colors">Community</a>
+            <a href="/#faq" className="text-gray-300 hover:text-white transition-colors">FAQ</a>
           </div>
 
           <div className="hidden md:flex items-center gap-4">
             <a href="#" className="text-gray-300 hover:text-white transition-colors">
               Login
             </a>
-            <a href="#" className="btn-primary">
-              Get Started
-            </a>
+            <Link to="/waitlist" className="btn-primary">
+              Join Waitlist
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -67,28 +68,28 @@ const Navbar = () => {
         )}
       >
         <div className="container mx-auto px-4 flex flex-col space-y-4">
-          <a href="#features" className="text-gray-300 hover:text-white py-2 transition-colors" onClick={toggleMenu}>
+          <a href="/#features" className="text-gray-300 hover:text-white py-2 transition-colors" onClick={toggleMenu}>
             Features
           </a>
-          <a href="#how-it-works" className="text-gray-300 hover:text-white py-2 transition-colors" onClick={toggleMenu}>
+          <a href="/#how-it-works" className="text-gray-300 hover:text-white py-2 transition-colors" onClick={toggleMenu}>
             How It Works
           </a>
-          <a href="#pricing" className="text-gray-300 hover:text-white py-2 transition-colors" onClick={toggleMenu}>
+          <a href="/#pricing" className="text-gray-300 hover:text-white py-2 transition-colors" onClick={toggleMenu}>
             Pricing
           </a>
-          <a href="#community" className="text-gray-300 hover:text-white py-2 transition-colors" onClick={toggleMenu}>
+          <a href="/#community" className="text-gray-300 hover:text-white py-2 transition-colors" onClick={toggleMenu}>
             Community
           </a>
-          <a href="#faq" className="text-gray-300 hover:text-white py-2 transition-colors" onClick={toggleMenu}>
+          <a href="/#faq" className="text-gray-300 hover:text-white py-2 transition-colors" onClick={toggleMenu}>
             FAQ
           </a>
           <div className="pt-4 border-t border-gray-800 flex flex-col gap-4">
             <a href="#" className="text-gray-300 hover:text-white transition-colors">
               Login
             </a>
-            <a href="#" className="btn-primary text-center">
-              Get Started
-            </a>
+            <Link to="/waitlist" className="btn-primary text-center" onClick={toggleMenu}>
+              Join Waitlist
+            </Link>
           </div>
         </div>
       </div>
