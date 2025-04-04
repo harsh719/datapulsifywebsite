@@ -1,7 +1,5 @@
 
 import React from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import { MessageSquare, ArrowRight, Sparkles, Star, Users, CheckCircle } from 'lucide-react';
 
 const Waitlist = () => {
@@ -13,9 +11,7 @@ const Waitlist = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col w-full">
-      <Navbar />
-      
+    <div className="min-h-screen flex flex-col w-full">      
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="relative min-h-[70vh] flex items-center pt-16 overflow-hidden gradient-bg">
@@ -191,8 +187,6 @@ const Waitlist = () => {
           </div>
         </section>
       </main>
-      
-      <Footer />
     </div>
   );
 };
