@@ -32,7 +32,11 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center">
-            <span className="text-white text-xl font-bold">Datapulsify</span>
+            <img 
+              src="/lovable-uploads/1b2fd219-c2a6-4b45-bc39-d48916e8e3f5.png" 
+              alt="Datapulsify Logo" 
+              className="h-8 md:h-10 mr-2"
+            />
           </Link>
 
           {/* Desktop Navigation */}
