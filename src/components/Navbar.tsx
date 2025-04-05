@@ -35,7 +35,7 @@ const Navbar = () => {
             <img 
               src="/lovable-uploads/1b2fd219-c2a6-4b45-bc39-d48916e8e3f5.png" 
               alt="Datapulsify Logo" 
-              className="h-8 md:h-10 mr-2"
+              className="h-10 md:h-12 w-auto"
             />
           </Link>
 
