@@ -3,8 +3,8 @@ import React from 'react';
 import { MessageSquare, ArrowRight, Sparkles, Star, Users, CheckCircle } from 'lucide-react';
 
 const Waitlist = () => {
-  // WhatsApp group link - replace with your actual WhatsApp community link
-  const whatsAppLink = "https://chat.whatsapp.com/yourgroup"; 
+  // WhatsApp group link with the provided URL
+  const whatsAppLink = "https://chat.whatsapp.com/Jw6j4yiBrIvK12gUIOl5Q0"; 
   
   const handleJoinWaitlist = () => {
     window.open(whatsAppLink, '_blank');
