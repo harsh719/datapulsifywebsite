@@ -4,18 +4,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Datapulsify - GSC Data Sync for Google Sheets</title>
-    <meta name="description" content="Datapulsify lets you seamlessly pull, analyze, and automate your Google Search Console data inside Google Sheets." />
+    <title>Join Waitlist - Datapulsify</title>
+    <meta name="description" content="Join the Datapulsify waitlist to get early access to our GSC Data Sync for Google Sheets." />
     <meta name="author" content="Datapulsify" />
-
-    <meta property="og:title" content="Datapulsify - GSC Data Sync for Google Sheets" />
-    <meta property="og:description" content="Datapulsify lets you seamlessly pull, analyze, and automate your Google Search Console data inside Google Sheets." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@datapulsify" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap">
     <link rel="stylesheet" href="css/styles.css">
@@ -33,11 +24,11 @@
 
             <!-- Desktop Navigation -->
             <div class="desktop-nav">
-              <a href="#features" class="nav-link">Features</a>
-              <a href="#how-it-works" class="nav-link">How It Works</a>
-              <a href="#pricing" class="nav-link">Pricing</a>
-              <a href="#community" class="nav-link">Community</a>
-              <a href="#faq" class="nav-link">FAQ</a>
+              <a href="index.html#features" class="nav-link">Features</a>
+              <a href="index.html#how-it-works" class="nav-link">How It Works</a>
+              <a href="index.html#pricing" class="nav-link">Pricing</a>
+              <a href="index.html#community" class="nav-link">Community</a>
+              <a href="index.html#faq" class="nav-link">FAQ</a>
             </div>
 
             <div class="desktop-actions">
@@ -55,11 +46,11 @@
         <!-- Mobile Navigation -->
         <div class="mobile-nav">
           <div class="container">
-            <a href="#features" class="nav-link-mobile">Features</a>
-            <a href="#how-it-works" class="nav-link-mobile">How It Works</a>
-            <a href="#pricing" class="nav-link-mobile">Pricing</a>
-            <a href="#community" class="nav-link-mobile">Community</a>
-            <a href="#faq" class="nav-link-mobile">FAQ</a>
+            <a href="index.html#features" class="nav-link-mobile">Features</a>
+            <a href="index.html#how-it-works" class="nav-link-mobile">How It Works</a>
+            <a href="index.html#pricing" class="nav-link-mobile">Pricing</a>
+            <a href="index.html#community" class="nav-link-mobile">Community</a>
+            <a href="index.html#faq" class="nav-link-mobile">FAQ</a>
             <div class="mobile-actions">
               <a href="#" class="nav-link-mobile">Login</a>
               <a href="waitlist.html" class="btn-primary-mobile">Join Waitlist</a>
@@ -68,38 +59,48 @@
         </div>
       </nav>
 
-      <!-- Main Content -->
-      <main>
-        <!-- Hero Section -->
-        <section id="hero" class="hero-section">
-          <!-- Hero content will be here -->
-        </section>
+      <!-- Waitlist Form Section -->
+      <section class="waitlist-section">
+        <div class="container">
+          <div class="waitlist-container">
+            <div class="waitlist-content">
+              <h1 class="waitlist-title">Join Our Waitlist</h1>
+              <p class="waitlist-subtitle">Be among the first to get access to Datapulsify when we launch.</p>
+              
+              <form id="waitlist-form" class="waitlist-form">
+                <div class="form-group">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address" required>
+                </div>
+                
+                <div class="form-group">
+                  <label for="company" class="form-label">Company (Optional)</label>
+                  <input type="text" id="company" name="company" class="form-input" placeholder="Enter your company name">
+                </div>
+                
+                <div class="form-group checkbox-group">
+                  <input type="checkbox" id="newsletter" name="newsletter" class="form-checkbox">
+                  <label for="newsletter" class="checkbox-label">Subscribe to our newsletter</label>
+                </div>
+                
+                <button type="submit" class="btn-primary submit-button">Join Waitlist</button>
+              </form>
 
-        <!-- Features Section -->
-        <section id="features" class="features-section">
-          <!-- Features content will be here -->
-        </section>
-
-        <!-- How It Works Section -->
-        <section id="how-it-works" class="how-it-works-section">
-          <!-- How it works content will be here -->
-        </section>
-
-        <!-- Pricing Section -->
-        <section id="pricing" class="pricing-section">
-          <!-- Pricing content will be here -->
-        </section>
-
-        <!-- Community Section -->
-        <section id="community" class="community-section">
-          <!-- Community content will be here -->
-        </section>
-
-        <!-- FAQ Section -->
-        <section id="faq" class="faq-section">
-          <!-- FAQ content will be here -->
-        </section>
-      </main>
+              <div id="submission-success" class="submission-message hidden">
+                <svg class="success-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"></path>
+                </svg>
+                <p>Thank you for joining our waitlist! We'll notify you when we launch.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- Footer -->
       <footer class="footer">
@@ -131,35 +132,7 @@
               </div>
             </div>
             
-            <div class="footer-column">
-              <h3 class="footer-heading">Product</h3>
-              <ul class="footer-links">
-                <li><a href="#features" class="footer-link">Features</a></li>
-                <li><a href="#pricing" class="footer-link">Pricing</a></li>
-                <li><a href="#" class="footer-link">Roadmap</a></li>
-                <li><a href="#faq" class="footer-link">FAQ</a></li>
-              </ul>
-            </div>
-            
-            <div class="footer-column">
-              <h3 class="footer-heading">Resources</h3>
-              <ul class="footer-links">
-                <li><a href="#" class="footer-link">Documentation</a></li>
-                <li><a href="#" class="footer-link">Tutorials</a></li>
-                <li><a href="#" class="footer-link">Blog</a></li>
-                <li><a href="#" class="footer-link">Support Center</a></li>
-              </ul>
-            </div>
-            
-            <div class="footer-column">
-              <h3 class="footer-heading">Company</h3>
-              <ul class="footer-links">
-                <li><a href="#" class="footer-link">About Us</a></li>
-                <li><a href="waitlist.html" class="footer-link">Join Waitlist</a></li>
-                <li><a href="#" class="footer-link">Privacy Policy</a></li>
-                <li><a href="#" class="footer-link">Terms of Service</a></li>
-              </ul>
-            </div>
+            <!-- Footer columns would be the same as in index.html -->
           </div>
           
           <div class="footer-bottom">
@@ -181,7 +154,7 @@
         </div>
       </footer>
     </div>
-    
+
     <script src="js/main.js"></script>
   </body>
 </html>
