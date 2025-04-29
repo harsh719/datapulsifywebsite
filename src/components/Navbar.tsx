@@ -44,6 +44,7 @@ const Navbar = () => {
             <a href="/#features" className="text-gray-300 hover:text-white transition-colors">Features</a>
             <a href="/#how-it-works" className="text-gray-300 hover:text-white transition-colors">How It Works</a>
             <a href="/#pricing" className="text-gray-300 hover:text-white transition-colors">Pricing</a>
+            <Link to="/lifetime-deal" className="text-gray-300 hover:text-white transition-colors">Lifetime Deal</Link>
             <a href="/#community" className="text-gray-300 hover:text-white transition-colors">Community</a>
             <a href="/#faq" className="text-gray-300 hover:text-white transition-colors">FAQ</a>
           </div>
@@ -81,6 +82,9 @@ const Navbar = () => {
           <a href="/#pricing" className="text-gray-300 hover:text-white py-2 transition-colors" onClick={toggleMenu}>
             Pricing
           </a>
+          <Link to="/lifetime-deal" className="text-gray-300 hover:text-white py-2 transition-colors" onClick={toggleMenu}>
+            Lifetime Deal
+          </Link>
           <a href="/#community" className="text-gray-300 hover:text-white py-2 transition-colors" onClick={toggleMenu}>
             Community
           </a>
