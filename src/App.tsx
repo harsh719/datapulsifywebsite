@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Waitlist from "./pages/Waitlist";
 import LifetimeDeal from "./pages/LifetimeDeal";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/waitlist" element={<Waitlist />} />
           <Route path="/lifetime-deal" element={<LifetimeDeal />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

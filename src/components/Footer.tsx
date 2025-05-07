@@ -54,7 +54,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
               <li><Link to="/waitlist" className="text-gray-400 hover:text-white transition-colors">Join Waitlist</Link></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+              <li><Link to="/terms-of-service" className="text-gray-400 hover:text-white transition-colors">Terms of Service</Link></li>
               <li><Link to="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link></li>
             </ul>
           </div>
@@ -69,9 +69,9 @@ const Footer = () => {
             <Link to="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors">
               Privacy Policy
             </Link>
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+            <Link to="/terms-of-service" className="text-gray-400 hover:text-white text-sm transition-colors">
               Terms of Service
-            </a>
+            </Link>
             <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center">
               <MessageCircle size={16} className="mr-1" />
               Contact
