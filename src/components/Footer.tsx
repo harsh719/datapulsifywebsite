@@ -54,8 +54,8 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
               <li><Link to="/waitlist" className="text-gray-400 hover:text-white transition-colors">Join Waitlist</Link></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+              <li><Link to="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link></li>
             </ul>
           </div>
         </div>
@@ -66,9 +66,9 @@ const Footer = () => {
           </p>
           
           <div className="flex items-center space-x-4">
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+            <Link to="/privacy-policy" className="text-gray-400 hover:text-white text-sm transition-colors">
               Privacy Policy
-            </a>
+            </Link>
             <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
               Terms of Service
             </a>
