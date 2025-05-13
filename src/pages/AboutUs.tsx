@@ -1,8 +1,7 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { CircleUser, Users, CircleInfo } from 'lucide-react';
+import { CircleUser, Users, CircleHelp } from 'lucide-react';
 
 const AboutUs = () => {
   return (
@@ -103,7 +102,7 @@ const AboutUs = () => {
               <div className="bg-gray-900 rounded-lg p-6 border border-gray-800">
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-green-900/20 rounded-full flex items-center justify-center mr-4">
-                    <CircleInfo size={24} className="text-green-500" />
+                    <CircleHelp size={24} className="text-green-500" />
                   </div>
                   <h3 className="text-xl font-semibold">Data Transparency</h3>
                 </div>
