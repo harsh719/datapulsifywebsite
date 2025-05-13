@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
-import { Mail, MessageSquare, CircleHelp } from 'lucide-react';
+import { Mail, MessageSquare } from 'lucide-react';
 
 const ContactUs = () => {
   const { toast } = useToast();
@@ -59,7 +59,7 @@ const ContactUs = () => {
               Have questions or need assistance? We're here to help.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
               <div className="bg-gray-900 rounded-lg p-6 text-center border border-gray-800">
                 <div className="mx-auto w-16 h-16 bg-blue-900/20 rounded-full flex items-center justify-center mb-4">
                   <Mail size={28} className="text-blue-500" />
@@ -84,19 +84,6 @@ const ContactUs = () => {
                 <p className="text-purple-400">
                   9:00 AM - 5:00 PM EST
                 </p>
-              </div>
-              
-              <div className="bg-gray-900 rounded-lg p-6 text-center border border-gray-800">
-                <div className="mx-auto w-16 h-16 bg-green-900/20 rounded-full flex items-center justify-center mb-4">
-                  <CircleHelp size={28} className="text-green-500" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Help Center</h3>
-                <p className="text-gray-400 mb-3">
-                  Find answers in our documentation
-                </p>
-                <a href="#" className="text-green-400 hover:text-green-300">
-                  Visit Help Center
-                </a>
               </div>
             </div>
             

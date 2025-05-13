@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -47,12 +48,12 @@ const AboutUs = () => {
           <section className="mb-16 max-w-4xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold mb-10 text-center">Our Team</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-gray-900 rounded-lg p-6 text-center border border-gray-800">
                 <div className="mx-auto w-24 h-24 bg-blue-900/20 rounded-full flex items-center justify-center mb-4">
                   <CircleUser size={36} className="text-blue-500" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">John Collins</h3>
+                <h3 className="text-xl font-semibold mb-2">Harsh Shah</h3>
                 <p className="text-blue-400 mb-3">Founder & CEO</p>
                 <p className="text-gray-400 text-sm">
                   Former SEO lead at a Fortune 500 company with 10+ years of experience in search analytics.
@@ -63,21 +64,10 @@ const AboutUs = () => {
                 <div className="mx-auto w-24 h-24 bg-purple-900/20 rounded-full flex items-center justify-center mb-4">
                   <CircleUser size={36} className="text-purple-500" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">Sarah Martinez</h3>
+                <h3 className="text-xl font-semibold mb-2">Twinkal Shah</h3>
                 <p className="text-purple-400 mb-3">CTO</p>
                 <p className="text-gray-400 text-sm">
                   Data scientist with expertise in building scalable analytics platforms and API integrations.
-                </p>
-              </div>
-              
-              <div className="bg-gray-900 rounded-lg p-6 text-center border border-gray-800">
-                <div className="mx-auto w-24 h-24 bg-green-900/20 rounded-full flex items-center justify-center mb-4">
-                  <CircleUser size={36} className="text-green-500" />
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Raj Patel</h3>
-                <p className="text-green-400 mb-3">Head of Product</p>
-                <p className="text-gray-400 text-sm">
-                  Product designer focused on creating intuitive user experiences for complex data tools.
                 </p>
               </div>
             </div>
