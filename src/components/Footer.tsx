@@ -52,10 +52,10 @@ const Footer = () => {
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider mb-4">Company</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+              <li><Link to="/about-us" className="text-gray-400 hover:text-white transition-colors">About Us</Link></li>
+              <li><Link to="/contact-us" className="text-gray-400 hover:text-white transition-colors">Contact Us</Link></li>
               <li><Link to="/waitlist" className="text-gray-400 hover:text-white transition-colors">Join Waitlist</Link></li>
-              <li><Link to="/terms-of-service" className="text-gray-400 hover:text-white transition-colors">Terms of Service</Link></li>
-              <li><Link to="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/refund-policy" className="text-gray-400 hover:text-white transition-colors">Refund Policy</Link></li>
             </ul>
           </div>
         </div>
@@ -72,10 +72,10 @@ const Footer = () => {
             <Link to="/terms-of-service" className="text-gray-400 hover:text-white text-sm transition-colors">
               Terms of Service
             </Link>
-            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center">
+            <Link to="/contact-us" className="text-gray-400 hover:text-white text-sm transition-colors flex items-center">
               <MessageCircle size={16} className="mr-1" />
               Contact
-            </a>
+            </Link>
           </div>
         </div>
       </div>
