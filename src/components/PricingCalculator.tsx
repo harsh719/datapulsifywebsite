@@ -2,10 +2,16 @@
 import React, { useState, useEffect } from 'react';
 import { toast } from '@/components/ui/use-toast';
 
-const PricingCalculator: React.FC = () => {
+type PricingCalculatorProps = {
+  monthlyPrice?: number;
+  lifetimePrice?: number;
+};
+
+const PricingCalculator: React.FC<PricingCalculatorProps> = ({ 
+  monthlyPrice = 9,
+  lifetimePrice = 47
+}) => {
   const [months, setMonths] = useState<number>(24);
-  const monthlyPrice = 9;
-  const lifetimePrice = 198;
   const [savings, setSavings] = useState<number>(0);
   const [breakEvenMonth, setBreakEvenMonth] = useState<number>(0);
 
@@ -17,7 +23,7 @@ const PricingCalculator: React.FC = () => {
     // Calculate break even point
     const calculatedBreakEven = Math.ceil(lifetimePrice / monthlyPrice);
     setBreakEvenMonth(calculatedBreakEven);
-  }, [months]);
+  }, [months, monthlyPrice, lifetimePrice]);
 
   const handleCopyToClipboard = () => {
     const text = `I'll save $${savings.toFixed(2)} over ${months} months with Datapulsify's Lifetime Deal!`;

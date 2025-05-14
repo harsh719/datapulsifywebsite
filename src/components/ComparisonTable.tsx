@@ -8,18 +8,26 @@ type PlanFeature = {
   lifetime: boolean;
 };
 
-const features: PlanFeature[] = [
-  { name: "All core GSC data", monthly: true, lifetime: true },
-  { name: "Custom query builder", monthly: true, lifetime: true },
-  { name: "Data visualizations", monthly: true, lifetime: true },
-  { name: "Future updates", monthly: false, lifetime: true },
-  { name: "Priority support", monthly: false, lifetime: true },
-  { name: "One-time payment", monthly: false, lifetime: true },
-  { name: "75,000 rows limit", monthly: false, lifetime: true },
-  { name: "Recurring monthly fee", monthly: true, lifetime: false },
-];
+type ComparisonTableProps = {
+  monthlyPrice?: number;
+  lifetimePrice?: number;
+};
 
-const ComparisonTable: React.FC = () => {
+const ComparisonTable: React.FC<ComparisonTableProps> = ({ 
+  monthlyPrice = 9,
+  lifetimePrice = 47 
+}) => {
+  const features: PlanFeature[] = [
+    { name: "All core GSC data", monthly: true, lifetime: true },
+    { name: "Custom query builder", monthly: true, lifetime: true },
+    { name: "Data visualizations", monthly: true, lifetime: true },
+    { name: "Future updates", monthly: false, lifetime: true },
+    { name: "Priority support", monthly: false, lifetime: true },
+    { name: "One-time payment", monthly: false, lifetime: true },
+    { name: "75,000 rows limit", monthly: false, lifetime: true },
+    { name: "Recurring monthly fee", monthly: true, lifetime: false },
+  ];
+
   return (
     <div className="w-full overflow-x-auto">
       <table className="w-full border-collapse">
@@ -28,11 +36,11 @@ const ComparisonTable: React.FC = () => {
             <th className="py-4 px-4 text-left border-b border-gray-800"></th>
             <th className="py-4 px-4 text-center border-b border-gray-800">
               <div className="text-lg font-semibold">Monthly Plan</div>
-              <div className="text-sm text-gray-400 mt-1">$9/month</div>
+              <div className="text-sm text-gray-400 mt-1">${monthlyPrice}/month</div>
             </th>
             <th className="py-4 px-4 text-center border-b border-gray-800 bg-white/5">
               <div className="text-lg font-semibold text-white">Lifetime Deal</div>
-              <div className="text-sm text-green-500 mt-1">$198 (one-time)</div>
+              <div className="text-sm text-green-500 mt-1">${lifetimePrice} (one-time)</div>
             </th>
           </tr>
         </thead>

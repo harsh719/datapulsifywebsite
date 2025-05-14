@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
@@ -16,6 +16,8 @@ import ComparisonTable from '@/components/ComparisonTable';
 import TestimonialCard from '@/components/TestimonialCard';
 import FeatureCard from '@/components/FeatureCard';
 import PricingCalculator from '@/components/PricingCalculator';
+import ProgressBar from '@/components/ProgressBar';
+import ProductScreenshot from '@/components/ProductScreenshot';
 
 const LifetimeDeal = () => {
   const [countdown, setCountdown] = useState({
@@ -26,6 +28,29 @@ const LifetimeDeal = () => {
   });
 
   const [emailInput, setEmailInput] = useState('');
+  const [slotsRemaining, setSlotsRemaining] = useState(315);
+  const totalSlots = 349;
+  const claimedSlots = totalSlots - slotsRemaining;
+
+  useEffect(() => {
+    // Update countdown timer
+    const timer = setInterval(() => {
+      setCountdown(prev => {
+        if (prev.seconds > 0) {
+          return { ...prev, seconds: prev.seconds - 1 };
+        } else if (prev.minutes > 0) {
+          return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
+        } else if (prev.hours > 0) {
+          return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
+        } else if (prev.days > 0) {
+          return { ...prev, days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 };
+        }
+        return prev;
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -42,6 +67,9 @@ const LifetimeDeal = () => {
       description: "Check your email to complete your purchase."
     });
     setEmailInput('');
+    
+    // Simulate a slot being claimed
+    setSlotsRemaining(prev => Math.max(0, prev - 1));
   };
   
   const testimonials = [
@@ -64,6 +92,27 @@ const LifetimeDeal = () => {
       name: "Rebecca Torres",
       position: "Freelance SEO Consultant",
       rating: 5
+    }
+  ];
+
+  const productScreenshots = [
+    {
+      id: 1,
+      src: "/lovable-uploads/1605e731-aa86-4b14-8b2c-5744f77536a9.png",
+      alt: "CTR Improvement Dashboard",
+      caption: "Track and improve your CTR with detailed keyword insights"
+    },
+    {
+      id: 2,
+      src: "/lovable-uploads/21c7adaf-f2ff-4692-84e6-8cf888be9063.png",
+      alt: "Quick-Win Analysis",
+      caption: "Identify quick-win opportunities for immediate ranking improvements"
+    },
+    {
+      id: 3,
+      src: "/lovable-uploads/ee688a90-19b0-4861-9075-bd4e3e057bb3.png",
+      alt: "Historical Performance Tracking",
+      caption: "Analyze historical performance with comprehensive date-based reporting"
     }
   ];
 
@@ -99,16 +148,23 @@ const LifetimeDeal = () => {
                 analytics. Pay once, use forever with our exclusive lifetime deal.
               </p>
 
+              <div className="w-full mb-8">
+                <ProgressBar total={totalSlots} claimed={claimedSlots} />
+                <p className="text-sm text-amber-400 mt-2 font-medium">
+                  Only {slotsRemaining} of {totalSlots} spots remaining! Once they're gone, they're gone forever.
+                </p>
+              </div>
+
               <div className="w-full max-w-xl bg-black/40 backdrop-blur-sm border border-white/20 rounded-xl p-6 mb-8 animate-fade-in animate-delay-300">
                 <div className="flex flex-col sm:flex-row justify-between items-center mb-4">
                   <div className="mb-4 sm:mb-0">
-                    <span className="text-sm text-gray-400 line-through">$297</span>
-                    <h3 className="text-3xl md:text-4xl font-bold">$198</h3>
+                    <span className="text-sm text-gray-400 line-through">$108/year</span>
+                    <h3 className="text-3xl md:text-4xl font-bold">$47</h3>
                     <span className="text-green-500 text-sm">One-time payment</span>
                   </div>
                   <div className="bg-white/10 px-4 py-2 rounded-lg">
                     <p className="text-sm text-center">
-                      <span className="font-bold text-green-400">33% OFF</span><br />
+                      <span className="font-bold text-green-400">Save $61+ yearly</span><br />
                       <span className="text-xs text-gray-300">Limited-time offer</span>
                     </p>
                   </div>
@@ -123,7 +179,7 @@ const LifetimeDeal = () => {
                     onChange={(e) => setEmailInput(e.target.value)}
                   />
                   <button type="submit" className="btn-primary whitespace-nowrap py-3">
-                    Get Lifetime Access
+                    Claim Your Spot Now
                   </button>
                 </form>
                 <p className="text-center text-xs text-gray-400 mt-3">
@@ -144,7 +200,7 @@ const LifetimeDeal = () => {
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-75">
               <div className="text-center">
-                <div className="font-bold text-2xl md:text-3xl">1,500+</div>
+                <div className="font-bold text-2xl md:text-3xl">30+</div>
                 <div className="text-sm text-gray-400">Happy Users</div>
               </div>
               <div className="text-center">
@@ -162,9 +218,30 @@ const LifetimeDeal = () => {
             </div>
           </div>
         </section>
+
+        {/* Real Insights Section */}
+        <section id="real-insights" className="py-20 bg-gradient-to-br from-gray-900 to-black">
+          <div className="container-section">
+            <h2 className="section-title">What You'll Actually See</h2>
+            <p className="section-subtitle">
+              Real screenshots from actual users showing the powerful insights Datapulsify provides
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+              {productScreenshots.map((screenshot) => (
+                <ProductScreenshot 
+                  key={screenshot.id}
+                  src={screenshot.src}
+                  alt={screenshot.alt}
+                  caption={screenshot.caption}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
         
         {/* Features Section */}
-        <section id="features" className="py-20 bg-gradient-to-br from-gray-900 to-black">
+        <section id="features" className="py-20 bg-black">
           <div className="container-section">
             <h2 className="section-title">Everything You Get With The Lifetime Deal</h2>
             <p className="section-subtitle">
@@ -207,7 +284,7 @@ const LifetimeDeal = () => {
         </section>
         
         {/* Product Demo/Showcase Section */}
-        <section className="py-16 bg-black">
+        <section className="py-16 bg-gradient-to-br from-gray-900 to-black">
           <div className="container-section">
             <div className="text-center mb-12">
               <h2 className="section-title">See Datapulsify in Action</h2>
@@ -229,27 +306,27 @@ const LifetimeDeal = () => {
         </section>
         
         {/* Pricing Comparison Section */}
-        <section id="pricing" className="bg-gradient-to-br from-gray-900 to-black py-20">
+        <section id="pricing" className="bg-black py-20">
           <div className="container-section">
             <h2 className="section-title">Why Our Lifetime Deal Makes Sense</h2>
             <p className="section-subtitle">
-              Compare the lifetime deal with our monthly subscription to see how much you'll save
+              Compare our one-time lifetime deal with the monthly subscription to see how much you'll save
             </p>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
               <div className="order-2 lg:order-1">
-                <ComparisonTable />
+                <ComparisonTable monthlyPrice={9} lifetimePrice={47} />
               </div>
               
               <div className="order-1 lg:order-2">
-                <PricingCalculator />
+                <PricingCalculator monthlyPrice={9} lifetimePrice={47} />
               </div>
             </div>
           </div>
         </section>
         
         {/* Testimonials Section */}
-        <section className="py-20 bg-black">
+        <section className="py-20 bg-gradient-to-br from-gray-900 to-black">
           <div className="container-section">
             <h2 className="section-title">What Our Users Are Saying</h2>
             <p className="section-subtitle">
@@ -272,7 +349,7 @@ const LifetimeDeal = () => {
         </section>
         
         {/* FAQ Section */}
-        <section id="faq" className="gradient-bg py-20">
+        <section id="faq" className="bg-black py-20">
           <div className="container-section">
             <h2 className="section-title">Frequently Asked Questions</h2>
             <p className="section-subtitle">
@@ -288,7 +365,7 @@ const LifetimeDeal = () => {
                   <AccordionContent className="px-6 pb-4 pt-2 text-gray-300">
                     Our lifetime deal includes permanent access to Datapulsify with a 75,000 row limit, 
                     all current features, priority support, and all future updates to the platform. You'll 
-                    pay just once and own it forever—no recurring fees or subscriptions.
+                    pay just once ($47) and own it forever—no recurring fees or subscriptions.
                   </AccordionContent>
                 </AccordionItem>
                 
@@ -308,7 +385,7 @@ const LifetimeDeal = () => {
                     How long will this lifetime deal be available?
                   </AccordionTrigger>
                   <AccordionContent className="px-6 pb-4 pt-2 text-gray-300">
-                    This is a strictly limited-time offer. Once we reach our limit of lifetime deal users, 
+                    This is a strictly limited-time offer available only to the first 349 users. Once all spots are claimed, 
                     we'll close this offer permanently and return to our regular subscription pricing model. 
                     We're limiting the number of lifetime deals to ensure we can provide excellent service to all users.
                   </AccordionContent>
@@ -357,13 +434,13 @@ const LifetimeDeal = () => {
                 Ready to transform your GSC data?
               </h2>
               <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-                Join hundreds of SEO professionals who've already secured their lifetime access to Datapulsify. 
-                Limited spots available.
+                Join 30+ professionals who've already secured their lifetime access to Datapulsify. 
+                Limited spots available — only {slotsRemaining} of {totalSlots} remaining!
               </p>
               
               <div className="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
                 <a href="#pricing" className="btn-primary py-3 px-8 text-lg font-medium">
-                  Get Lifetime Access
+                  Claim Your Spot Now
                 </a>
                 <Link to="/" className="btn-secondary py-3 px-8 text-lg font-medium">
                   Learn More
@@ -371,7 +448,7 @@ const LifetimeDeal = () => {
               </div>
               
               <div className="mt-6 text-sm text-gray-400">
-                <p>60-day money-back guarantee • One-time payment of $198</p>
+                <p>60-day money-back guarantee • One-time payment of $47</p>
               </div>
             </div>
           </div>
