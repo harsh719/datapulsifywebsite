@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Check, Star, MessageSquare, PuzzlePiece } from 'lucide-react';
+import { Check, Star, MessageSquare, Puzzle } from 'lucide-react';
 import { toast } from '@/components/ui/use-toast';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -98,7 +98,7 @@ const ThankYou = () => {
                 <Card className="bg-black/30 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all">
                   <CardContent className="p-6">
                     <div className="flex items-center justify-center mb-4">
-                      <PuzzlePiece className="text-blue-400" size={28} />
+                      <Puzzle className="text-blue-400" size={28} />
                     </div>
                     <h3 className="text-xl font-medium mb-3 text-center">
                       Explore Add-ons
