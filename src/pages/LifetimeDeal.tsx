@@ -1,10 +1,9 @@
-
 import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
 import { Check, Star, Clock, Plus, Timer, List, Play } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { 
   Accordion, 
   AccordionItem, 
@@ -20,6 +19,7 @@ import ProgressBar from '@/components/ProgressBar';
 import ProductScreenshot from '@/components/ProductScreenshot';
 
 const LifetimeDeal = () => {
+  const navigate = useNavigate();
   const [countdown, setCountdown] = useState({
     days: 3,
     hours: 8,
@@ -63,13 +63,17 @@ const LifetimeDeal = () => {
     }
 
     toast({
-      title: "Almost there!",
-      description: "Check your email to complete your purchase."
+      title: "Processing...",
+      description: "Taking you to the payment page."
     });
-    setEmailInput('');
     
     // Simulate a slot being claimed
     setSlotsRemaining(prev => Math.max(0, prev - 1));
+    
+    // Simulate payment processing and redirect to thank you page
+    setTimeout(() => {
+      navigate('/thank-you');
+    }, 1500);
   };
   
   const testimonials = [
