@@ -3,8 +3,9 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Check, Star } from 'lucide-react';
+import { Check, Star, MessageSquare, PuzzlePiece } from 'lucide-react';
 import { toast } from '@/components/ui/use-toast';
+import { Card, CardContent } from '@/components/ui/card';
 
 const ThankYou = () => {
   useEffect(() => {
@@ -48,6 +49,14 @@ const ThankYou = () => {
                   <span className="font-medium">$47.00</span>
                 </div>
                 <div className="flex justify-between items-center border-b border-gray-800 py-3">
+                  <span className="text-gray-300">Email</span>
+                  <span className="font-medium">user@example.com</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-gray-800 py-3">
+                  <span className="text-gray-300">Name</span>
+                  <span className="font-medium">John Doe</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-gray-800 py-3">
                   <span className="text-gray-300">Row Limit</span>
                   <span className="font-medium">75,000 rows</span>
                 </div>
@@ -57,34 +66,54 @@ const ThankYou = () => {
                 </div>
               </div>
               
-              <div className="flex flex-col md:flex-row gap-4 justify-center mb-12">
-                <Link to="/" className="btn-primary py-3 px-8">
-                  Go to Dashboard
-                </Link>
+              <div className="flex flex-col md:flex-row justify-center mb-12">
                 <Link to="/contact-us" className="btn-secondary py-3 px-8">
                   Need Help?
                 </Link>
               </div>
               
-              <div className="bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-white/10">
-                <h3 className="text-lg font-medium mb-3 flex items-center justify-center">
-                  <Star className="mr-2 text-amber-400" size={20} />
-                  Get the Most Out of Your Lifetime Access
-                </h3>
-                <ul className="text-left space-y-3 mt-4">
-                  <li className="flex items-start">
-                    <Check size={18} className="mr-2 text-green-500 mt-1 flex-shrink-0" />
-                    <span>Visit our documentation to learn how to connect your GSC account</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check size={18} className="mr-2 text-green-500 mt-1 flex-shrink-0" />
-                    <span>Join our community to share insights with other Datapulsify users</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check size={18} className="mr-2 text-green-500 mt-1 flex-shrink-0" />
-                    <span>Set up your first custom query to start extracting powerful insights</span>
-                  </li>
-                </ul>
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card className="bg-black/30 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all">
+                  <CardContent className="p-6">
+                    <div className="flex items-center justify-center mb-4">
+                      <MessageSquare className="text-green-400" size={28} />
+                    </div>
+                    <h3 className="text-xl font-medium mb-3 text-center">
+                      Join our WhatsApp Community
+                    </h3>
+                    <p className="text-gray-300 mb-4 text-center">
+                      Connect with other Datapulsify users and share insights
+                    </p>
+                    <a 
+                      href="https://whatsapp.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block w-full py-2 px-4 bg-green-600 hover:bg-green-700 text-center rounded-md transition-colors"
+                    >
+                      Join Now
+                    </a>
+                  </CardContent>
+                </Card>
+                
+                <Card className="bg-black/30 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all">
+                  <CardContent className="p-6">
+                    <div className="flex items-center justify-center mb-4">
+                      <PuzzlePiece className="text-blue-400" size={28} />
+                    </div>
+                    <h3 className="text-xl font-medium mb-3 text-center">
+                      Explore Add-ons
+                    </h3>
+                    <p className="text-gray-300 mb-4 text-center">
+                      Enhance your experience with our powerful add-ons
+                    </p>
+                    <Link 
+                      to="/add-ons" 
+                      className="block w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 text-center rounded-md transition-colors"
+                    >
+                      Browse Add-ons
+                    </Link>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </div>
