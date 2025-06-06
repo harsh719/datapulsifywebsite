@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Waitlist from "./pages/Waitlist";
 import LifetimeDeal from "./pages/LifetimeDeal";
 import ThankYou from "./pages/ThankYou";
+import AddOns from "./pages/AddOns";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
 import RefundPolicy from "./pages/RefundPolicy";
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/waitlist" element={<Waitlist />} />
           <Route path="/lifetime-deal" element={<LifetimeDeal />} />
           <Route path="/thank-you" element={<ThankYou />} />
+          <Route path="/add-ons" element={<AddOns />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/refund-policy" element={<RefundPolicy />} />
