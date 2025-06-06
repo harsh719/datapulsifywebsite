@@ -13,7 +13,6 @@ const AddOns = () => {
     {
       title: "Get Action Items",
       description: "Automatically extract actionable insights and tasks from your SEO data to prioritize your optimization efforts.",
-      price: "$19/month",
       features: [
         "Automated action item extraction",
         "Priority-based task ranking", 
@@ -26,7 +25,6 @@ const AddOns = () => {
     {
       title: "Keyword Tracking",
       description: "Advanced keyword position tracking with historical data, competitor analysis, and ranking insights.",
-      price: "$29/month", 
       features: [
         "Real-time keyword position tracking",
         "Historical ranking data",
@@ -40,7 +38,6 @@ const AddOns = () => {
     {
       title: "Quick-Win Optimizer",
       description: "Identify and execute quick SEO wins that can provide immediate ranking improvements with minimal effort.",
-      price: "$24/month",
       features: [
         "Quick-win opportunity detection",
         "Impact vs effort analysis", 
@@ -54,7 +51,6 @@ const AddOns = () => {
     {
       title: "SEO Data Intelligence",
       description: "Enhanced SEO data analysis with keyword types, categories, and advanced segmentation for better insights.",
-      price: "$34/month",
       features: [
         "Advanced keyword categorization",
         "Search intent classification",
@@ -119,13 +115,7 @@ const AddOns = () => {
                     
                     {/* Content Section */}
                     <div className="p-6">
-                      <div className="flex justify-between items-start mb-4">
-                        <h3 className="text-xl md:text-2xl font-bold">{addon.title}</h3>
-                        <div className="text-right">
-                          <div className="text-2xl font-bold text-blue-400">{addon.price}</div>
-                          <div className="text-sm text-gray-400">per month</div>
-                        </div>
-                      </div>
+                      <h3 className="text-xl md:text-2xl font-bold mb-4">{addon.title}</h3>
                       
                       <p className="text-gray-300 mb-6">{addon.description}</p>
                       
