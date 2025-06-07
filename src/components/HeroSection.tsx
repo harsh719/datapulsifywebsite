@@ -2,14 +2,18 @@
 import React from 'react';
 import { ArrowRight, Star, Shield, Users, Zap } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
+import LottieBackground from './LottieBackground';
 
 const HeroSection = () => {
   const isMobile = useIsMobile();
   
   return (
     <section className="relative min-h-screen flex items-center pt-16 overflow-hidden gradient-bg">
+      {/* Lottie Background Animation */}
+      <LottieBackground className="z-0" />
+      
       {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden z-10">
         <div className="absolute top-0 left-0 right-0 h-[500px] bg-gradient-radial from-gray-800/20 to-transparent"></div>
         
         {/* Abstract wave patterns */}
@@ -18,7 +22,7 @@ const HeroSection = () => {
         <div className="absolute top-1/2 right-0 w-64 h-64 bg-gray-800/30 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="container-section relative z-10">
+      <div className="container-section relative z-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Hero Badge */}
           <div className="inline-flex items-center py-2 px-4 rounded-full text-sm bg-white/10 text-white mb-6 backdrop-blur-sm animate-fade-in border border-white/20">

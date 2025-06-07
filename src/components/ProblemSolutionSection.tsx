@@ -1,11 +1,16 @@
 
 import React from 'react';
 import { AlertTriangle, CheckCircle, Zap, Target, Clock, FileSpreadsheet } from 'lucide-react';
+import LottieBackground from './LottieBackground';
+import AnimatedGif from './AnimatedGif';
 
 const ProblemSolutionSection = () => {
   return (
-    <section className="py-20 md:py-32 bg-black">
-      <div className="container-section">
+    <section className="py-20 md:py-32 bg-black relative overflow-hidden">
+      {/* Lottie Background Animation */}
+      <LottieBackground className="z-0" />
+      
+      <div className="container-section relative z-10">
         <h2 className="section-title">The SEO Data Problem</h2>
         
         {/* Problem Description */}
@@ -35,6 +40,15 @@ const ProblemSolutionSection = () => {
         {/* Solution */}
         <div className="max-w-5xl mx-auto">
           <h3 className="text-2xl md:text-3xl font-bold text-center mb-8">DataPulsify: Built by an SEO Who Got Tired of This</h3>
+          
+          {/* Add GIF placeholder - Replace this URL with your actual GIF */}
+          <div className="flex justify-center mb-8">
+            <AnimatedGif
+              src="https://via.placeholder.com/600x400/1f2937/60a5fa?text=Your+GIF+Here"
+              alt="DataPulsify Demo GIF"
+              className="max-w-lg mx-auto"
+            />
+          </div>
           
           <div className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 border border-blue-500/30 rounded-2xl p-8 mb-12">
             <div className="text-center mb-8">

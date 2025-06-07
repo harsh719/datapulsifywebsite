@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Check, AlertTriangle, Star, Shield, Clock, Zap } from 'lucide-react';
+import LottieBackground from './LottieBackground';
 
 const PricingSection = () => {
   const features = [
@@ -13,8 +14,11 @@ const PricingSection = () => {
   ];
 
   return (
-    <section id="pricing" className="py-20 md:py-32 bg-black">
-      <div className="container-section">
+    <section id="pricing" className="py-20 md:py-32 bg-black relative overflow-hidden">
+      {/* Lottie Background Animation */}
+      <LottieBackground className="z-0" />
+      
+      <div className="container-section relative z-10">
         <h2 className="section-title">One Price. Two Platforms. Lifetime Access.</h2>
         
         <div className="max-w-4xl mx-auto">
