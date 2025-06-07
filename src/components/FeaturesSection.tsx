@@ -10,129 +10,141 @@ import {
   Brain,
   FileImage,
   RefreshCw,
-  Target
+  Target,
+  TrendingUp,
+  Clock
 } from 'lucide-react';
 
 const FeaturesSection = () => {
-  const sheetFeatures = [
+  const coreFeatures = [
     {
-      title: "One-Click GSC Integration",
-      description: "Connect your Google Search Console in seconds. No technical setup, no API keys, no headaches. Just authorize once and pull data forever.",
-      icon: Zap
+      title: "One-Click GSC Import",
+      description: "Connect Google Search Console in seconds. No API keys, no technical setup.",
+      icon: Zap,
+      benefit: "Save 2+ hours per week"
     },
     {
-      title: "Smart Query Builder", 
-      description: "Filter data the way you actually think about it: 'Show me pages that rank 4-10 but get no clicks' or 'Find keywords we lost rankings for this month'",
-      icon: Filter
+      title: "Smart Data Analysis", 
+      description: "Find click gap opportunities, track rankings, identify quick wins automatically.",
+      icon: Brain,
+      benefit: "Spot opportunities others miss"
     },
     {
-      title: "Raw Data Mastery",
-      description: "Export exactly what you need with no sampling limits. Your data stays in your Google Sheets forever, formatted exactly how you want it.",
-      icon: Database
+      title: "Client-Ready Reports",
+      description: "Beautiful visualizations and white-label reports that impress stakeholders.",
+      icon: FileImage,
+      benefit: "Win more business"
     },
     {
-      title: "Advanced Analytics",
-      description: "Click gap analysis, automated rank tracking with historical data, and custom queries for any SEO scenario.",
-      icon: BarChart3
-    }
-  ];
-
-  const dashboardFeatures = [
-    {
-      title: "Visual Click Gap Analysis",
-      description: "See opportunities jump off the screen with interactive charts that highlight missed traffic. Color-coded rankings make it impossible to miss quick wins.",
-      icon: Eye
-    },
-    {
-      title: "Performance Trend Visualizations",
-      description: "Month-over-month ranking movements that tell a story, CTR trends with context, position distribution visualizations that impress clients.",
-      icon: BarChart3
-    },
-    {
-      title: "AI-Powered Insights",
-      description: "Get automatic recommendations: 'Your page X could gain 40% more clicks with a title tweak' or 'These 12 keywords are about to break into page 1'",
-      icon: Brain
-    },
-    {
-      title: "Client-Ready Reporting",
-      description: "Create reports so beautiful, clients think you hired a designer. Drag-and-drop builder, white-label branding, one-click PDF exports.",
-      icon: FileImage
+      title: "75K Row Capacity",
+      description: "Handle large datasets without sampling limits or data restrictions.",
+      icon: Database,
+      benefit: "Perfect for agencies"
     }
   ];
 
   return (
     <section id="features" className="gradient-bg py-20 md:py-32">
       <div className="container-section">
-        <h2 className="section-title">Two Powerful Platforms. One Seamless Workflow.</h2>
+        <h2 className="section-title">Everything You Need to Master GSC Data</h2>
         <p className="section-subtitle">
-          Choose your weapon: Deep spreadsheet analysis or stunning visual insights. Or use both – they sync perfectly.
+          Two platforms, endless possibilities. Use sheets for deep analysis, dashboard for client presentations.
         </p>
 
-        <div className="grid lg:grid-cols-2 gap-12 md:gap-16 mt-16">
-          {/* Google Sheets Add-on */}
-          <div className="space-y-8">
+        {/* Core Features Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16 mb-16">
+          {coreFeatures.map((feature, index) => (
+            <div key={index} className="bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all text-center">
+              <div className="bg-blue-600/20 rounded-lg p-3 w-fit mx-auto mb-4">
+                <feature.icon className="w-8 h-8 text-blue-400" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
+              <p className="text-gray-300 text-sm mb-3 leading-relaxed">{feature.description}</p>
+              <div className="text-xs text-green-400 font-medium">{feature.benefit}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Platform Showcase */}
+        <div className="grid lg:grid-cols-2 gap-12 mt-16">
+          {/* Sheets Platform */}
+          <div className="space-y-6">
             <div className="text-center lg:text-left">
               <div className="inline-flex items-center mb-4 p-3 bg-green-600/20 rounded-full border border-green-500/30">
                 <FileSpreadsheet className="w-8 h-8 text-green-400" />
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold mb-3">Google Sheets Add-on</h3>
-              <p className="text-lg text-blue-400 mb-2">Work Where You Live</p>
-              <p className="text-gray-400 italic">Perfect for data analysts and spreadsheet power users</p>
+              <h3 className="text-2xl font-bold mb-2">Google Sheets Add-on</h3>
+              <p className="text-green-400 font-medium">For SEO Analysts & Data Lovers</p>
             </div>
             
-            <div className="space-y-6">
-              {sheetFeatures.map((feature, index) => (
-                <div key={index} className="bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all">
-                  <div className="flex items-start">
-                    <div className="bg-green-600/20 rounded-lg p-2 mr-4 flex-shrink-0">
-                      <feature.icon className="w-6 h-6 text-green-400" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold mb-2">{feature.title}</h4>
-                      <p className="text-gray-300 text-sm leading-relaxed">{feature.description}</p>
-                    </div>
-                  </div>
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <Filter className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
+                <div>
+                  <div className="font-medium">Smart Query Builder</div>
+                  <div className="text-sm text-gray-400">Filter data exactly how you think about it</div>
                 </div>
-              ))}
+              </div>
+              <div className="flex items-start space-x-3">
+                <Database className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
+                <div>
+                  <div className="font-medium">No Sampling Limits</div>
+                  <div className="text-sm text-gray-400">Get all your data, formatted perfectly</div>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <TrendingUp className="w-5 h-5 text-green-400 mt-1 flex-shrink-0" />
+                <div>
+                  <div className="font-medium">Advanced Analytics</div>
+                  <div className="text-sm text-gray-400">Click gap analysis, rank tracking, custom queries</div>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Web Dashboard */}
-          <div className="space-y-8">
+          {/* Dashboard Platform */}
+          <div className="space-y-6">
             <div className="text-center lg:text-left">
               <div className="inline-flex items-center mb-4 p-3 bg-purple-600/20 rounded-full border border-purple-500/30">
                 <BarChart3 className="w-8 h-8 text-purple-400" />
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold mb-3">Beautiful Web Dashboard</h3>
-              <p className="text-lg text-purple-400 mb-2">Impress Everyone</p>
-              <p className="text-gray-400 italic">When you need stunning visuals and effortless insights</p>
+              <h3 className="text-2xl font-bold mb-2">Visual Dashboard</h3>
+              <p className="text-purple-400 font-medium">For Client Presentations & Insights</p>
             </div>
             
-            <div className="space-y-6">
-              {dashboardFeatures.map((feature, index) => (
-                <div key={index} className="bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-white/20 transition-all">
-                  <div className="flex items-start">
-                    <div className="bg-purple-600/20 rounded-lg p-2 mr-4 flex-shrink-0">
-                      <feature.icon className="w-6 h-6 text-purple-400" />
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold mb-2">{feature.title}</h4>
-                      <p className="text-gray-300 text-sm leading-relaxed">{feature.description}</p>
-                    </div>
-                  </div>
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <Eye className="w-5 h-5 text-purple-400 mt-1 flex-shrink-0" />
+                <div>
+                  <div className="font-medium">Interactive Visualizations</div>
+                  <div className="text-sm text-gray-400">See opportunities jump off the screen</div>
                 </div>
-              ))}
+              </div>
+              <div className="flex items-start space-x-3">
+                <Brain className="w-5 h-5 text-purple-400 mt-1 flex-shrink-0" />
+                <div>
+                  <div className="font-medium">AI-Powered Insights</div>
+                  <div className="text-sm text-gray-400">Automatic recommendations and opportunity detection</div>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <FileImage className="w-5 h-5 text-purple-400 mt-1 flex-shrink-0" />
+                <div>
+                  <div className="font-medium">White-Label Reports</div>
+                  <div className="text-sm text-gray-400">Beautiful, branded reports that win clients</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Cross-Platform Magic */}
         <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-2xl p-8 border border-blue-500/30 max-w-4xl mx-auto">
+          <div className="bg-gradient-to-r from-blue-900/30 to-purple-900/30 rounded-2xl p-8 border border-blue-500/30 max-w-3xl mx-auto">
             <RefreshCw className="w-12 h-12 text-blue-400 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold mb-4">Cross-Platform Magic</h3>
+            <h3 className="text-2xl font-bold mb-4">Perfect Together</h3>
             <p className="text-lg text-gray-300 leading-relaxed">
-              Dashboard insights sync instantly with your sheets. Export visualizations to spreadsheets. Import sheet calculations to dashboard. Best of both worlds, zero friction.
+              Start your analysis in sheets, create stunning presentations in the dashboard. Data syncs instantly between both platforms.
             </p>
           </div>
         </div>
