@@ -5,11 +5,11 @@ import { Check, AlertTriangle, Star, Shield, Clock, Zap } from 'lucide-react';
 const PricingSection = () => {
   const features = [
     "Both platforms included (Sheets + Dashboard)",
-    "75,000 rows capacity (handles 99% of sites)", 
-    "AI-powered insights & recommendations",
-    "White-label client reporting",
+    "25,000 rows capacity (perfect for most sites)", 
+    "Smart data analysis & recommendations",
+    "Professional visualizations",
     "All future updates included",
-    "Priority support from SEO experts"
+    "Standard support"
   ];
 
   return (
@@ -34,7 +34,7 @@ const PricingSection = () => {
               <div className="text-center">
                 <Check className="w-8 h-8 text-green-400 mx-auto mb-2" />
                 <div className="font-semibold">Find more opportunities</div>
-                <div className="text-sm text-gray-400">AI-powered recommendations</div>
+                <div className="text-sm text-gray-400">Smart analysis & recommendations</div>
               </div>
             </div>
           </div>
@@ -53,7 +53,7 @@ const PricingSection = () => {
                 {/* Pricing */}
                 <div className="flex items-center justify-center mb-6">
                   <span className="text-2xl text-gray-400 line-through mr-4">$564/year</span>
-                  <span className="text-5xl md:text-6xl font-bold text-white">$198</span>
+                  <span className="text-5xl md:text-6xl font-bold text-white">$47.99</span>
                   <span className="text-xl text-gray-300 ml-3">Once</span>
                 </div>
                 
@@ -73,7 +73,7 @@ const PricingSection = () => {
               {/* CTA */}
               <div className="text-center">
                 <a href="/lifetime-deal" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-8 rounded-full font-bold text-xl transition-all hover:from-blue-700 hover:to-purple-700 hover:scale-105 shadow-xl inline-block mb-4">
-                  Get Lifetime Access - $198
+                  Get Lifetime Access - $47.99
                 </a>
                 <p className="text-sm text-gray-400">60-Day Money-Back Guarantee</p>
               </div>

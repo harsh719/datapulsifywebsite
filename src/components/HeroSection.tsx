@@ -40,7 +40,7 @@ const HeroSection = () => {
           {/* Key Benefits */}
           <div className="grid sm:grid-cols-3 gap-6 mb-8 max-w-3xl mx-auto animate-fade-in animate-delay-300">
             <div className="text-center">
-              <div className="text-2xl font-bold text-blue-400 mb-1">75K</div>
+              <div className="text-2xl font-bold text-blue-400 mb-1">25K</div>
               <div className="text-sm text-gray-400">Row Capacity</div>
             </div>
             <div className="text-center">
@@ -56,7 +56,7 @@ const HeroSection = () => {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 animate-fade-in animate-delay-500">
             <a href="/lifetime-deal" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-8 rounded-full font-bold text-lg transition-all hover:from-blue-700 hover:to-purple-700 hover:scale-105 shadow-xl">
-              Get Lifetime Access - $198
+              Get Lifetime Access - $47.99
             </a>
             <a href="#features" className="border-2 border-white text-white py-4 px-8 rounded-full font-medium text-lg transition-all hover:bg-white/10 flex items-center justify-center">
               See How It Works

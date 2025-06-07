@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -163,12 +164,12 @@ const LifetimeDeal = () => {
                 <div className="flex flex-col sm:flex-row justify-between items-center mb-4">
                   <div className="mb-4 sm:mb-0">
                     <span className="text-sm text-gray-400 line-through">$108/year</span>
-                    <h3 className="text-3xl md:text-4xl font-bold">$47</h3>
+                    <h3 className="text-3xl md:text-4xl font-bold">$47.99</h3>
                     <span className="text-green-500 text-sm">One-time payment</span>
                   </div>
                   <div className="bg-white/10 px-4 py-2 rounded-lg">
                     <p className="text-sm text-center">
-                      <span className="font-bold text-green-400">Save $61+ yearly</span><br />
+                      <span className="font-bold text-green-400">Save $60+ yearly</span><br />
                       <span className="text-xs text-gray-300">Limited-time offer</span>
                     </p>
                   </div>
@@ -212,7 +213,7 @@ const LifetimeDeal = () => {
                 <div className="text-sm text-gray-400">User Rating</div>
               </div>
               <div className="text-center">
-                <div className="font-bold text-2xl md:text-3xl">75,000</div>
+                <div className="font-bold text-2xl md:text-3xl">25,000</div>
                 <div className="text-sm text-gray-400">Rows Limit</div>
               </div>
               <div className="text-center">
@@ -254,8 +255,8 @@ const LifetimeDeal = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
               <FeatureCard
-                title="75,000 Row Limit"
-                description="Process up to 75,000 rows of GSC data at once, perfect for most websites and agencies."
+                title="25,000 Row Limit"
+                description="Process up to 25,000 rows of GSC data at once, perfect for most websites."
                 icon={List}
               />
               <FeatureCard
@@ -264,8 +265,8 @@ const LifetimeDeal = () => {
                 icon={Plus}
               />
               <FeatureCard
-                title="Priority Support"
-                description="Jump to the front of the queue with dedicated priority support from our team."
+                title="Standard Support"
+                description="Get help from our support team when you need assistance with the platform."
                 icon={Check}
               />
               <FeatureCard
@@ -319,11 +320,11 @@ const LifetimeDeal = () => {
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
               <div className="order-2 lg:order-1">
-                <ComparisonTable monthlyPrice={9} lifetimePrice={47} />
+                <ComparisonTable monthlyPrice={9} lifetimePrice={47.99} />
               </div>
               
               <div className="order-1 lg:order-2">
-                <PricingCalculator monthlyPrice={9} lifetimePrice={47} />
+                <PricingCalculator monthlyPrice={9} lifetimePrice={47.99} />
               </div>
             </div>
           </div>
@@ -367,18 +368,18 @@ const LifetimeDeal = () => {
                     What exactly is included in this lifetime deal?
                   </AccordionTrigger>
                   <AccordionContent className="px-6 pb-4 pt-2 text-gray-300">
-                    Our lifetime deal includes permanent access to Datapulsify with a 75,000 row limit, 
-                    all current features, priority support, and all future updates to the platform. You'll 
-                    pay just once ($47) and own it forever—no recurring fees or subscriptions.
+                    Our lifetime deal includes permanent access to Datapulsify with a 25,000 row limit, 
+                    all current features, standard support, and all future updates to the platform. You'll 
+                    pay just once ($47.99) and own it forever—no recurring fees or subscriptions.
                   </AccordionContent>
                 </AccordionItem>
                 
                 <AccordionItem value="item-2" className="border border-gray-800 rounded-lg overflow-hidden bg-gray-900/50">
                   <AccordionTrigger className="px-6 py-4 text-left hover:bg-gray-800/50 transition-colors">
-                    What happens if I need more than 75,000 rows?
+                    What happens if I need more than 25,000 rows?
                   </AccordionTrigger>
                   <AccordionContent className="px-6 pb-4 pt-2 text-gray-300">
-                    The lifetime deal includes a 75,000 row limit which is sufficient for most users. 
+                    The lifetime deal includes a 25,000 row limit which is sufficient for most users. 
                     If you need more capacity, you can upgrade to our enterprise plan which offers custom row limits. 
                     Your lifetime access will remain intact, and you'll only pay the difference for the additional capacity.
                   </AccordionContent>
@@ -452,7 +453,7 @@ const LifetimeDeal = () => {
               </div>
               
               <div className="mt-6 text-sm text-gray-400">
-                <p>60-day money-back guarantee • One-time payment of $47</p>
+                <p>60-day money-back guarantee • One-time payment of $47.99</p>
               </div>
             </div>
           </div>

@@ -32,7 +32,7 @@ const FinalCtaSection = () => {
               <h3 className="text-xl font-bold mb-4 text-green-400">Get DataPulsify:</h3>
               <ul className="text-gray-300 space-y-2 text-sm">
                 <li>• Clean GSC data in seconds, not hours</li>
-                <li>• AI finds opportunities you'd never spot</li>
+                <li>• Smart analysis finds opportunities you'd miss</li>
                 <li>• Impress clients with beautiful reports</li>
                 <li>• Save 15+ hours per month, guaranteed</li>
               </ul>
@@ -64,13 +64,13 @@ const FinalCtaSection = () => {
                 <div className="text-sm text-gray-400">payback time</div>
               </div>
             </div>
-            <p className="text-lg text-gray-300 mt-6">DataPulsify: <span className="font-bold">$198 once</span> • Pays for itself in week 1</p>
+            <p className="text-lg text-gray-300 mt-6">DataPulsify: <span className="font-bold">$47.99 once</span> • Pays for itself in week 1</p>
           </div>
 
           {/* Main CTA */}
           <div className="text-center mb-12">
             <a href="/lifetime-deal" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-6 px-12 rounded-full font-bold text-2xl transition-all hover:from-blue-700 hover:to-purple-700 hover:scale-105 shadow-xl inline-block mb-4">
-              Get Lifetime Access - $198
+              Get Lifetime Access - $47.99
             </a>
             <p className="text-gray-400">Both platforms • 60-day guarantee • Limited spots remaining</p>
           </div>

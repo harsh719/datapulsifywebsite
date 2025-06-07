@@ -31,15 +31,15 @@ const FeaturesSection = () => {
     },
     {
       title: "Client-Ready Reports",
-      description: "Beautiful visualizations and white-label reports that impress stakeholders.",
+      description: "Beautiful visualizations and professional reports that impress stakeholders.",
       icon: FileImage,
       benefit: "Win more business"
     },
     {
-      title: "75K Row Capacity",
+      title: "25K Row Capacity",
       description: "Handle large datasets without sampling limits or data restrictions.",
       icon: Database,
-      benefit: "Perfect for agencies"
+      benefit: "Perfect for small to medium sites"
     }
   ];
 
@@ -120,17 +120,17 @@ const FeaturesSection = () => {
                   <div className="text-sm text-gray-400">See opportunities jump off the screen</div>
                 </div>
               </div>
-              <div className="flex items-start space-x-3">
+              <div className="flex items-start space-x-3 opacity-60">
                 <Brain className="w-5 h-5 text-purple-400 mt-1 flex-shrink-0" />
                 <div>
-                  <div className="font-medium">AI-Powered Insights</div>
+                  <div className="font-medium">AI-Powered Insights <span className="text-xs bg-orange-500/20 text-orange-400 px-2 py-1 rounded-full">Coming Soon</span></div>
                   <div className="text-sm text-gray-400">Automatic recommendations and opportunity detection</div>
                 </div>
               </div>
-              <div className="flex items-start space-x-3">
+              <div className="flex items-start space-x-3 opacity-60">
                 <FileImage className="w-5 h-5 text-purple-400 mt-1 flex-shrink-0" />
                 <div>
-                  <div className="font-medium">White-Label Reports</div>
+                  <div className="font-medium">White-Label Reports <span className="text-xs bg-orange-500/20 text-orange-400 px-2 py-1 rounded-full">Coming Soon</span></div>
                   <div className="text-sm text-gray-400">Beautiful, branded reports that win clients</div>
                 </div>
               </div>
