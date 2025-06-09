@@ -85,6 +85,34 @@ const MotionDashboard = () => {
     );
   };
 
+  // Custom line component with drawing animation
+  const AnimatedLine = (props: any) => {
+    const { points } = props;
+    if (!points || points.length === 0) return null;
+    
+    // Create SVG path from points
+    const pathData = points.reduce((path: string, point: any, index: number) => {
+      const command = index === 0 ? 'M' : 'L';
+      return `${path} ${command} ${point.x} ${point.y}`;
+    }, '');
+
+    return (
+      <path
+        d={pathData}
+        fill="none"
+        stroke="#3B82F6"
+        strokeWidth={3}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        style={{
+          strokeDasharray: '1000',
+          strokeDashoffset: animationStep >= 3 ? '0' : '1000',
+          transition: 'stroke-dashoffset 1.5s ease-out'
+        }}
+      />
+    );
+  };
+
   return (
     <div className={`relative w-full h-[600px] bg-slate-900 rounded-2xl overflow-hidden transition-all duration-1000 ${
       animationStep >= 1 ? 'scale-105 opacity-100' : 'scale-100 opacity-100'
@@ -157,16 +185,10 @@ const MotionDashboard = () => {
                 <Line
                   type="monotone"
                   dataKey="clicks"
-                  stroke="#3B82F6"
+                  stroke="transparent"
                   strokeWidth={3}
                   dot={<CustomDot />}
-                  strokeDasharray={animationStep >= 3 ? "0" : "1000"}
-                  strokeDashoffset={animationStep >= 3 ? "0" : "1000"}
-                  className="transition-all duration-2000 ease-out"
-                  style={{
-                    strokeDasharray: animationStep >= 3 ? '0' : '1000',
-                    strokeDashoffset: animationStep >= 3 ? '0' : '1000',
-                  }}
+                  line={<AnimatedLine />}
                 />
               </LineChart>
             </ResponsiveContainer>
