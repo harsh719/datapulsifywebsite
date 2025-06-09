@@ -194,7 +194,7 @@ const SettingUpGSC = () => {
               <CardContent>
                 <ol className="space-y-2 list-decimal list-inside">
                   <li className="text-gray-300">Log in to your Datapulsify account</li>
-                  <li className="text-gray-300">Go to Settings > Integrations</li>
+                  <li className="text-gray-300">Go to Settings &gt; Integrations</li>
                   <li className="text-gray-300">Click "Connect Google Search Console"</li>
                   <li className="text-gray-300">Authorize Datapulsify to access your GSC data</li>
                   <li className="text-gray-300">Select the properties you want to analyze</li>
