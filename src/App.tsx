@@ -1,4 +1,5 @@
 
+import React, { Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -16,6 +17,12 @@ import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import Support from "./pages/Support";
 import NotFound from "./pages/NotFound";
+
+// Lazy load support pages
+const QuickStartGuide = React.lazy(() => import('./pages/support/QuickStartGuide'));
+const SettingUpGSC = React.lazy(() => import('./pages/support/SettingUpGSC'));
+const GoogleSheetsAddon = React.lazy(() => import('./pages/support/GoogleSheetsAddon'));
+const FirstDataExport = React.lazy(() => import('./pages/support/FirstDataExport'));
 
 const queryClient = new QueryClient();
 
@@ -38,16 +45,24 @@ const App = () => (
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/support" element={<Support />} />
           <Route path="/support/quick-start-guide" element={
-            React.lazy(() => import('./pages/support/QuickStartGuide'))
+            <Suspense fallback={<div>Loading...</div>}>
+              <QuickStartGuide />
+            </Suspense>
           } />
           <Route path="/support/setting-up-gsc" element={
-            React.lazy(() => import('./pages/support/SettingUpGSC'))
+            <Suspense fallback={<div>Loading...</div>}>
+              <SettingUpGSC />
+            </Suspense>
           } />
           <Route path="/support/google-sheets-addon" element={
-            React.lazy(() => import('./pages/support/GoogleSheetsAddon'))
+            <Suspense fallback={<div>Loading...</div>}>
+              <GoogleSheetsAddon />
+            </Suspense>
           } />
           <Route path="/support/first-data-export" element={
-            React.lazy(() => import('./pages/support/FirstDataExport'))
+            <Suspense fallback={<div>Loading...</div>}>
+              <FirstDataExport />
+            </Suspense>
           } />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
