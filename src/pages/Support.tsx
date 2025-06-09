@@ -13,11 +13,8 @@ import {
   FileText, 
   HelpCircle, 
   Book, 
-  Settings, 
   CreditCard, 
-  Download,
   Users,
-  Shield,
   Zap
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -31,10 +28,10 @@ const Support = () => {
       icon: Book,
       description: 'Learn the basics of using Datapulsify',
       articles: [
-        { title: 'Quick Start Guide', isNew: true },
-        { title: 'Setting up Google Search Console', isNew: false },
-        { title: 'Installing the Google Sheets Add-on', isNew: false },
-        { title: 'Your First Data Export', isNew: false }
+        { title: 'Quick Start Guide', isNew: true, link: '/support/quick-start-guide' },
+        { title: 'Setting up Google Search Console', isNew: false, link: '/support/setting-up-gsc' },
+        { title: 'Installing the Google Sheets Add-on', isNew: false, link: '/support/google-sheets-addon' },
+        { title: 'Your First Data Export', isNew: false, link: '/support/first-data-export' }
       ]
     },
     {
@@ -42,32 +39,8 @@ const Support = () => {
       icon: CreditCard,
       description: 'Manage your account and subscription',
       articles: [
-        { title: 'Lifetime Deal FAQ', isNew: false },
-        { title: 'Refund Policy', isNew: false },
-        { title: 'Account Settings', isNew: false },
-        { title: 'Data Usage Limits', isNew: true }
-      ]
-    },
-    {
-      title: 'Features & Tools',
-      icon: Zap,
-      description: 'Make the most of Datapulsify features',
-      articles: [
-        { title: 'Dashboard Overview', isNew: false },
-        { title: 'Advanced Filtering', isNew: true },
-        { title: 'Data Export Options', isNew: false },
-        { title: 'Custom Reports', isNew: false }
-      ]
-    },
-    {
-      title: 'Troubleshooting',
-      icon: Settings,
-      description: 'Resolve common issues',
-      articles: [
-        { title: 'Connection Issues', isNew: false },
-        { title: 'Data Not Syncing', isNew: false },
-        { title: 'Error Messages Guide', isNew: true },
-        { title: 'Performance Tips', isNew: false }
+        { title: 'Lifetime Deal FAQ', isNew: false, link: '/lifetime-deal#faq' },
+        { title: 'Refund Policy', isNew: false, link: '/refund-policy' }
       ]
     }
   ];
@@ -102,6 +75,12 @@ const Support = () => {
       article.title.toLowerCase().includes(searchTerm.toLowerCase())
     )
   );
+
+  const handleLiveChat = () => {
+    // In a real implementation, this would open a live chat widget
+    console.log('Opening live chat...');
+    alert('Live chat would open here in a real implementation');
+  };
 
   return (
     <div className="min-h-screen flex flex-col w-full bg-black text-white">
@@ -187,9 +166,15 @@ const Support = () => {
                     <ul className="space-y-3">
                       {category.articles.map((article, articleIndex) => (
                         <li key={articleIndex} className="flex items-center justify-between">
-                          <button className="text-gray-300 hover:text-white transition-colors text-left">
-                            {article.title}
-                          </button>
+                          {article.link.startsWith('/') ? (
+                            <Link to={article.link} className="text-gray-300 hover:text-white transition-colors text-left">
+                              {article.title}
+                            </Link>
+                          ) : (
+                            <a href={article.link} className="text-gray-300 hover:text-white transition-colors text-left">
+                              {article.title}
+                            </a>
+                          )}
                           {article.isNew && (
                             <Badge variant="secondary" className="bg-green-500/20 text-green-400 border-green-500/30">
                               New
@@ -218,7 +203,12 @@ const Support = () => {
                   Contact Support
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="w-full sm:w-auto text-black hover:text-black" 
+                onClick={handleLiveChat}
+              >
                 <MessageCircle className="mr-2" size={20} />
                 Live Chat
               </Button>

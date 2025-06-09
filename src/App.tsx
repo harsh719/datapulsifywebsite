@@ -37,6 +37,18 @@ const App = () => (
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/support" element={<Support />} />
+          <Route path="/support/quick-start-guide" element={
+            React.lazy(() => import('./pages/support/QuickStartGuide'))
+          } />
+          <Route path="/support/setting-up-gsc" element={
+            React.lazy(() => import('./pages/support/SettingUpGSC'))
+          } />
+          <Route path="/support/google-sheets-addon" element={
+            React.lazy(() => import('./pages/support/GoogleSheetsAddon'))
+          } />
+          <Route path="/support/first-data-export" element={
+            React.lazy(() => import('./pages/support/FirstDataExport'))
+          } />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
