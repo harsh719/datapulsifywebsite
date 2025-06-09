@@ -30,10 +30,10 @@ const MotionDashboard = () => {
       { delay: 0, step: 1 }, // Start zoom-in
       { delay: 300, step: 2 }, // Show metrics cards
       { delay: 600, step: 3 }, // Start line animation
-      { delay: 2000, step: 4 }, // Pulse on January
-      { delay: 2800, step: 5 }, // Show text
-      { delay: 3500, step: 6 }, // Start fade out
-      { delay: 4500, step: 0 }, // Reset for loop
+      { delay: 3500, step: 4 }, // Pulse on January (after extended line animation)
+      { delay: 4300, step: 5 }, // Show text
+      { delay: 5000, step: 6 }, // Start fade out
+      { delay: 6000, step: 0 }, // Reset for loop
     ];
 
     const timeouts = sequence.map(({ delay, step }) => {
@@ -60,7 +60,7 @@ const MotionDashboard = () => {
           if (step !== 0) setAnimationStep(step);
         }, delay);
       });
-    }, 5000); // Loop every 5 seconds
+    }, 6500); // Loop every 6.5 seconds
 
     // Cleanup function
     return () => {
@@ -106,7 +106,7 @@ const MotionDashboard = () => {
           <p className="text-slate-400">Comparing May 23 - May 23 vs May 23 - May 22</p>
         </div>
 
-        {/* Metrics Cards */}
+        {/* Metrics Cards with individual animations */}
         <div className={`grid grid-cols-4 gap-6 mb-8 transition-all duration-700 ${
           animationStep >= 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
@@ -118,8 +118,15 @@ const MotionDashboard = () => {
           ].map((metric, index) => (
             <div 
               key={index}
-              className={`bg-slate-800 rounded-xl p-6 border border-slate-700 transition-all duration-300 delay-${index * 100}`}
-              style={{ animationDelay: `${index * 100}ms` }}
+              className={`bg-slate-800 rounded-xl p-6 border border-slate-700 transition-all duration-500 transform ${
+                animationStep >= 2 
+                  ? 'opacity-100 translate-y-0 scale-100' 
+                  : 'opacity-0 translate-y-4 scale-95'
+              }`}
+              style={{ 
+                transitionDelay: animationStep >= 2 ? `${index * 150}ms` : '0ms',
+                animationDelay: `${index * 150}ms` 
+              }}
             >
               <h3 className="text-slate-400 text-sm mb-2">{metric.label}</h3>
               <div className="text-2xl font-bold text-white mb-1">{metric.value}</div>
@@ -163,7 +170,7 @@ const MotionDashboard = () => {
                   strokeDasharray={animationStep >= 3 ? "0" : "1000"}
                   strokeDashoffset={animationStep >= 3 ? "0" : "1000"}
                   style={{
-                    transition: 'stroke-dashoffset 1.5s ease-out'
+                    transition: 'stroke-dashoffset 3s ease-out'
                   }}
                 />
               </LineChart>
@@ -172,16 +179,13 @@ const MotionDashboard = () => {
         </div>
       </div>
 
-      {/* Text Overlay */}
+      {/* Text Overlay - simplified without "Tracking Growth" */}
       {showText && (
         <div className={`absolute inset-0 flex items-center justify-center bg-black/50 transition-opacity duration-500 ${
           showText ? 'opacity-100' : 'opacity-0'
         }`}>
           <div className="text-center">
-            <h3 className="text-4xl font-bold text-white mb-2 animate-fade-in">
-              Tracking Growth.
-            </h3>
-            <p className="text-2xl text-slate-300 animate-fade-in animate-delay-300">
+            <p className="text-2xl text-slate-300 animate-fade-in">
               Month by Month.
             </p>
           </div>
