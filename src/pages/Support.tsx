@@ -62,7 +62,7 @@ const Support = () => {
     },
     {
       title: 'Community',
-      description: 'Join our Discord',
+      description: 'Join our WhatsApp group',
       icon: Users,
       action: 'community',
       color: 'bg-purple-500'
@@ -82,6 +82,10 @@ const Support = () => {
     alert('Live chat would open here in a real implementation');
   };
 
+  const handleWhatsAppGroup = () => {
+    window.open('https://chat.whatsapp.com/your-group-link', '_blank');
+  };
+
   return (
     <div className="min-h-screen flex flex-col w-full bg-black text-white">
       <Navbar />
@@ -89,7 +93,7 @@ const Support = () => {
         <div className="container mx-auto px-4 md:px-8">
           {/* Header Section */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
               How can we help you?
             </h1>
             <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
@@ -129,13 +133,15 @@ const Support = () => {
                     </Link>
                   )}
                   {action.action === 'docs' && (
-                    <Button className="w-full" variant="outline">
-                      Browse Docs
-                    </Button>
+                    <Link to="/documentation">
+                      <Button className="w-full" variant="outline">
+                        Browse Docs
+                      </Button>
+                    </Link>
                   )}
                   {action.action === 'community' && (
-                    <Button className="w-full" variant="outline">
-                      Join Discord
+                    <Button className="w-full" variant="outline" onClick={handleWhatsAppGroup}>
+                      Join WhatsApp Group
                     </Button>
                   )}
                 </CardContent>
@@ -145,7 +151,7 @@ const Support = () => {
 
           {/* Support Categories */}
           <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-8 text-center">Browse by Category</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center text-white">Browse by Category</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {filteredCategories.map((category, index) => (
                 <Card key={index} className="bg-gray-900 border-gray-800">
@@ -192,7 +198,7 @@ const Support = () => {
           {/* Contact Section */}
           <div className="bg-gray-900 rounded-xl p-8 border border-gray-800 text-center">
             <HelpCircle size={48} className="mx-auto text-blue-400 mb-4" />
-            <h3 className="text-2xl font-semibold mb-4">Still need help?</h3>
+            <h3 className="text-2xl font-semibold mb-4 text-white">Still need help?</h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
               Can't find what you're looking for? Our support team is here to help you get the most out of Datapulsify.
             </p>
@@ -206,7 +212,7 @@ const Support = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="w-full sm:w-auto text-black hover:text-black" 
+                className="w-full sm:w-auto text-white hover:text-black" 
                 onClick={handleLiveChat}
               >
                 <MessageCircle className="mr-2" size={20} />

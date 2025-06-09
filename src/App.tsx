@@ -1,4 +1,3 @@
-
 import React, { Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -16,6 +15,7 @@ import RefundPolicy from "./pages/RefundPolicy";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import Support from "./pages/Support";
+import Documentation from "./pages/Documentation";
 import NotFound from "./pages/NotFound";
 
 // Lazy load support pages
@@ -44,6 +44,7 @@ const App = () => (
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/support" element={<Support />} />
+          <Route path="/documentation" element={<Documentation />} />
           <Route path="/support/quick-start-guide" element={
             <Suspense fallback={<div>Loading...</div>}>
               <QuickStartGuide />
