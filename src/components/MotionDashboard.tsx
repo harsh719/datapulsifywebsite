@@ -17,7 +17,14 @@ const MotionDashboard = () => {
     { month: 'Apr', clicks: 55 }
   ];
 
-  // Animation sequence
+  // Reset animation function
+  const resetAnimation = () => {
+    setAnimationStep(0);
+    setShowText(false);
+    setFadeOut(false);
+  };
+
+  // Animation sequence with loop
   useEffect(() => {
     const sequence = [
       { delay: 0, step: 1 }, // Start zoom-in
@@ -26,15 +33,40 @@ const MotionDashboard = () => {
       { delay: 2000, step: 4 }, // Pulse on January
       { delay: 2800, step: 5 }, // Show text
       { delay: 3500, step: 6 }, // Start fade out
+      { delay: 4500, step: 0 }, // Reset for loop
     ];
 
-    sequence.forEach(({ delay, step }) => {
-      setTimeout(() => {
+    const timeouts = sequence.map(({ delay, step }) => {
+      return setTimeout(() => {
         if (step === 5) setShowText(true);
         if (step === 6) setFadeOut(true);
-        setAnimationStep(step);
+        if (step === 0) {
+          // Reset all states for loop
+          resetAnimation();
+        } else {
+          setAnimationStep(step);
+        }
       }, delay);
     });
+
+    // Set up the loop interval
+    const loopInterval = setInterval(() => {
+      resetAnimation();
+      // Restart the sequence
+      sequence.forEach(({ delay, step }) => {
+        setTimeout(() => {
+          if (step === 5) setShowText(true);
+          if (step === 6) setFadeOut(true);
+          if (step !== 0) setAnimationStep(step);
+        }, delay);
+      });
+    }, 5000); // Loop every 5 seconds
+
+    // Cleanup function
+    return () => {
+      timeouts.forEach(timeout => clearTimeout(timeout));
+      clearInterval(loopInterval);
+    };
   }, []);
 
   // Custom dot component for the peak month pulse
@@ -55,8 +87,8 @@ const MotionDashboard = () => {
 
   return (
     <div className={`relative w-full h-[600px] bg-slate-900 rounded-2xl overflow-hidden transition-all duration-1000 ${
-      animationStep >= 1 ? 'scale-105' : 'scale-100'
-    } ${fadeOut ? 'opacity-0' : 'opacity-100'}`}>
+      animationStep >= 1 ? 'scale-105 opacity-100' : 'scale-100 opacity-100'
+    } ${fadeOut ? 'opacity-30' : 'opacity-100'}`}>
       
       {/* Background with subtle parallax */}
       <div className={`absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900 transition-transform duration-2000 ${
