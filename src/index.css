@@ -99,4 +99,18 @@
   .animate-delay-500 {
     animation-delay: 500ms;
   }
+
+  /* Line drawing animation */
+  @keyframes draw-line {
+    from {
+      stroke-dashoffset: 1000;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  .animate-draw-line {
+    animation: draw-line 2s ease-out forwards;
+  }
 }
